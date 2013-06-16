@@ -8,7 +8,10 @@ dependencies, like beanstalkd
 import base64
 import datetime
 import logging
-import simplejson
+try:
+    import json as simplejson
+except ImportError:
+    import simplejson
 import subprocess
 import unittest
 
