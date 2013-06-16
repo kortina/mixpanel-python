@@ -20,3 +20,6 @@ Basic Usage:
     mp.engage_user_set("some_user_id", {"$first_name": "Pam"})
 
 
+    # block until subprocess sending event to mixpanel has completed
+    sp = mp.track_event("some_event", {"property": "val"})
+    sp.communicate()

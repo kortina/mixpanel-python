@@ -55,7 +55,7 @@ class Mixpanel(object):
     def track_event(self, event, properties):
         """
         @param event: The overall event/category you would like to log this data under
-        @param properties: A dictionary of key-value pairs that describe the event
+        @param properties: A dictionary describing attirbutes of the event
                            See https://mixpanel.com/api/ for further detail.
 
         Example usage:
@@ -77,11 +77,10 @@ class Mixpanel(object):
     def import_event(self, event, properties):
         """
         @param event: The overall event/category you would like to log this data under
-        @param properties: A dictionary of key-value pairs that describe the event
+        @param properties: A dictionary describing attributes of the event
                            See https://mixpanel.com/api/ for further detail.
 
-        See also:
-        https://mixpanel.com/docs/api-documentation/importing-events-older-than-31-days
+       See also: https://mixpanel.com/docs/api-documentation/importing-events-older-than-31-days
 
         * this method lets you import events older than 5 days
         * The endpoint is /import/ instead of /track/
@@ -115,6 +114,16 @@ class Mixpanel(object):
         """
         Smart method will correctly call either /track or /import based on the
         'time' value from the event properties
+
+        @param event: The overall event/category you would like to log this data under
+        @param properties: A dictionary describing attributes of the event
+                           See https://mixpanel.com/api/ for further detail.
+
+        Example usage:
+        track_import_event({'event': '$signup',
+                      'properties': {'distinct_id': 481,
+                                     'time': 1321499371,
+                                     'token': '35efee6b32cfab9852a4cddb4d9c710e'}})
         """
         ts = properties.get('time')
         if ts:
@@ -130,6 +139,11 @@ class Mixpanel(object):
         """
         Set properties on a user. If you are incrementing a value,
         use the engage_add method.
+
+        @param user_id: distinct identifier for this user (eg, a user_id or username)
+        @param properties: A dictionary of attributes to tag the user with.
+
+        See:
         https://mixpanel.com/docs/people-analytics/people-http-specification-insert-data
         """
         params = {
