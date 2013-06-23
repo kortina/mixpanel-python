@@ -1,7 +1,7 @@
 """Based on mixpanel example code from:
 https://mixpanel.com/docs/integration-libraries/python
 
-Requires `curl`, simplejson, and Python version 2.4 or higher.  mixpanel-python is intended
+Requires `curl`, the simplejson or json lib, and Python version 2.4 or higher.  mixpanel-python is intended
 to be simpler than https://pypi.python.org/pypi/mixpanel which has more
 dependencies, like beanstalkd
 """

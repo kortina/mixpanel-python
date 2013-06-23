@@ -1,6 +1,6 @@
 from setuptools import setup
 setup(name='mixpanel-python',
-      version='0.0.1',
+      version='0.0.2',
       description='Minimal Mixpanel API Client',
       author='Andrew Kortina',
       author_email='kortina@gmail.com',
