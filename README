@@ -2,7 +2,7 @@ A very minimal Mixpanel API client for python, based on mixpanel example code fr
 
     https://mixpanel.com/docs/integration-libraries/python
 
-Requires `curl`, `simplejson`, and Python version 2.4 or higher.  `mixpanel-python` is intended to be simpler than https://pypi.python.org/pypi/mixpanel which has more dependencies, like `beanstalkd`
+Requires `curl`, either the `json` or `simplejson` python library, and Python version 2.4 or higher.  `mixpanel-python` is intended to be simpler than https://pypi.python.org/pypi/mixpanel which has more dependencies, like `beanstalkd`
 
 Basic Usage:
 
